@@ -9,4 +9,4 @@ let StatsSchema = new mongoose.Schema(statsJSON, {
   timestamps: true,
 });
 
-module.exports = mongoose.model('Stats', StatsSchema);
+module.exports = mongoose.model('Stat', StatsSchema);

@@ -8,7 +8,7 @@ router.get('/:id', async (req, res) => {
 
   const stats = await Stats.getAll(id);
 
-  if (stats === null) {
+  if (stats === null || stats.length === 0) {
     res.status(400).json({
       code: 400,
       message: `Bin No: ${id} is not a valid bin`,
@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 
   res.status(200).json({
     id,
-    stats,
+    stats: stats.reverse(),
   });
 });
 
