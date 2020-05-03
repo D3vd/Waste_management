@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <p style={{ textAlign: 'center' }}>Waste Management Dashboard</p>
+      <h1>Waste Management Dashboard</h1>
     </header>
   );
 };
