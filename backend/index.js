@@ -2,18 +2,21 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const Database = require('./controller/database');
 
 const app = express();
 
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(logger('tiny'));
 app.use(cors());
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+app.use('/', require('./routes/index'));
+app.use('/bin', require('./routes/bin'));
 
 // Initialize MongoDB
 db = new Database();
