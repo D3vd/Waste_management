@@ -1,14 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
-import Container from 'components/Container';
 
 const Header = () => {
   return (
     <header>
-      <Container type="content">
-        <p css={{ textAlign: 'center' }}>Waste Management Dashboard</p>
-      </Container>
+      <p style={{ textAlign: 'center' }}>Waste Management Dashboard</p>
     </header>
   );
 };

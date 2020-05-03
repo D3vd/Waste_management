@@ -1,7 +1,9 @@
-@import "settings/__settings";
-@import "util/__util";
-@import "components/__components";
-@import "pages/__pages";
+@import 'settings/__settings';
+@import 'util/__util';
+@import 'components/__components';
+@import 'pages/__pages';
+
+@import '~leaflet/dist/leaflet.css'; // sass
 
 * {
   box-sizing: border-box;
@@ -21,4 +23,8 @@ body {
 
 main {
   padding: 2em 0;
+}
+
+.markercluster-map {
+  height: 100vh;
 }
