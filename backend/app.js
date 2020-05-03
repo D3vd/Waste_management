@@ -17,6 +17,7 @@ app.use(cors());
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/bin', require('./routes/bin'));
+app.use('/bins', require('./routes/bins'));
 
 // Initialize MongoDB
 db = new Database();
