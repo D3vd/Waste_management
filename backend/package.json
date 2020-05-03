@@ -2,10 +2,10 @@
   "name": "waste_management_dashboard",
   "version": "1.0.0",
   "description": "Waste Management Dashboard",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

@@ -3,6 +3,31 @@ const router = express.Router();
 
 const Bin = require('../controller/bin');
 
+router.get('/:id', async (req, res) => {
+  const id = req.params.id;
+
+  let bin = await Bin.read(id);
+
+  if (bin === null) {
+    res.status(400).json({
+      code: 400,
+      message: `Unable to find Bin with id ${id}`,
+    });
+    return;
+  }
+
+  res.status(200).json({
+    id: bin.id,
+    name: bin.name,
+    lat: bin.lat,
+    lng: bin.lng,
+    createdAt: bin.createdAt,
+    updatedAt: bin.updatedAt,
+  });
+
+  return;
+});
+
 router.post('/', async (req, res) => {
   const { id, name, lat, lng } = req.body;
 
@@ -36,6 +61,10 @@ router.post('/', async (req, res) => {
   }
 
   return;
+});
+
+router.get('/', (req, res) => {
+  res.status(404).send('Invalid Route');
 });
 
 module.exports = router;

@@ -1,9 +1,15 @@
 let Bin = require('../models/bins');
 
+async function read(id) {
+  let bin = await Bin.findOne({ id });
+
+  return bin;
+}
+
 async function write(id, name, lat, lng) {
   let binJSON = {};
 
-  let err = await Bin.count({ id }, (err, cnt) => {
+  let err = await Bin.countDocuments({ id }, (err, cnt) => {
     // Check if the bin with id exists
     if (cnt > 0 || err) {
       return false;
@@ -26,4 +32,4 @@ async function write(id, name, lat, lng) {
   return true;
 }
 
-module.exports = { write };
+module.exports = { write, read };
