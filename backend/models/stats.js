@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 let statsJSON = {
-  id: String,
+  id: Number,
   level: Number,
 };
 

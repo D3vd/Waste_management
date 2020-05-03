@@ -1,5 +1,5 @@
-let Bin = require('../models/bins');
-let Stats = require('../models/stats');
+const Bin = require('../models/bins');
+const Stats = require('../models/stats');
 
 async function update(id, level) {
   let affected = 0;
@@ -13,8 +13,8 @@ async function update(id, level) {
     level,
   };
 
-  let statDoc = new Stats(statJSON);
-  await statDoc.save();
+  let statsDoc = new Stats(statJSON);
+  await statsDoc.save();
   return true;
 }
 

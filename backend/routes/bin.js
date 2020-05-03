@@ -21,6 +21,7 @@ router.get('/:id', async (req, res) => {
     name: bin.name,
     lat: bin.lat,
     lng: bin.lng,
+    level: bin.level,
     createdAt: bin.createdAt,
     updatedAt: bin.updatedAt,
   });

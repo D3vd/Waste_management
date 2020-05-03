@@ -19,6 +19,7 @@ app.use('/', require('./routes/index'));
 app.use('/bin', require('./routes/bin'));
 app.use('/bins', require('./routes/bins'));
 app.use('/level', require('./routes/level'));
+app.use('/stats', require('./routes/stats'));
 
 // Initialize MongoDB
 db = new Database();
