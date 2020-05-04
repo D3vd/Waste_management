@@ -10,15 +10,21 @@ L.Icon.Default.mergeOptions({
   iconUrl: require('../../images/trash.svg'),
 });
 
-const trashFull = new L.Icon({
-  iconUrl: require('../../images/full.svg'),
-  iconRetinaUrl: require('../../images/full.svg'),
-  iconSize: new L.Point(24, 41),
-});
-
 const trashEmpty = new L.Icon({
   iconUrl: require('../../images/trash.svg'),
   iconRetinaUrl: require('../../images/trash.svg'),
+  iconSize: new L.Point(24, 41),
+});
+
+const trashWarning = new L.Icon({
+  iconUrl: require('../../images/warning.svg'),
+  iconRetinaUrl: require('../../images/warning.svg'),
+  iconSize: new L.Point(24, 41),
+});
+
+const trashFull = new L.Icon({
+  iconUrl: require('../../images/full.svg'),
+  iconRetinaUrl: require('../../images/full.svg'),
   iconSize: new L.Point(24, 41),
 });
 
@@ -41,7 +47,13 @@ function MapIndex({ bins }) {
         <Marker
           key={bin.name}
           position={[bin.lat, bin.lng]}
-          icon={bin.level > 50 ? trashFull : trashEmpty}
+          icon={
+            bin.level <= 40
+              ? trashEmpty
+              : bin.level >= 80
+              ? trashFull
+              : trashWarning
+          }
         >
           <Popup className="pop-up">
             <h1>{bin.name}</h1>
