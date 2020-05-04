@@ -6,8 +6,20 @@ import L from 'leaflet';
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('./trash.svg'),
-  iconUrl: require('./trash.svg'),
+  iconRetinaUrl: require('../../images/trash.svg'),
+  iconUrl: require('../../images/trash.svg'),
+});
+
+const trashFull = new L.Icon({
+  iconUrl: require('../../images/full.svg'),
+  iconRetinaUrl: require('../../images/full.svg'),
+  iconSize: new L.Point(24, 41),
+});
+
+const trashEmpty = new L.Icon({
+  iconUrl: require('../../images/trash.svg'),
+  iconRetinaUrl: require('../../images/trash.svg'),
+  iconSize: new L.Point(24, 41),
 });
 
 function MapIndex({ bins }) {
@@ -26,8 +38,17 @@ function MapIndex({ bins }) {
 
       {console.log(bins)}
       {bins.map((bin) => (
-        <Marker key={bin.name} position={[bin.lat, bin.lng]}>
-          <Popup>{bin.name}</Popup>
+        <Marker
+          key={bin.name}
+          position={[bin.lat, bin.lng]}
+          icon={bin.level > 50 ? trashFull : trashEmpty}
+        >
+          <Popup className="pop-up">
+            <h1>{bin.name}</h1>
+            <h3>Level: {bin.level}%</h3>
+            <h4>Lat: {bin.lat}</h4>
+            <h4>Lng: {bin.lng}</h4>
+          </Popup>
         </Marker>
       ))}
     </Map>
