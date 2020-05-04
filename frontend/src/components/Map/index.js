@@ -10,11 +10,7 @@ L.Icon.Default.mergeOptions({
   iconUrl: require('./trash.svg'),
 });
 
-import useBinLocations from '../../hooks/useBinLocations';
-
-function MapIndex() {
-  const bins = useBinLocations();
-
+function MapIndex({ bins }) {
   return (
     <Map
       className="map"
@@ -28,6 +24,7 @@ function MapIndex() {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
 
+      {console.log(bins)}
       {bins.map((bin) => (
         <Marker key={bin.name} position={[bin.lat, bin.lng]}>
           <Popup>{bin.name}</Popup>
