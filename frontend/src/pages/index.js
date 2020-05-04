@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Layout from 'components/Layout';
 import MapIndex from '../components/Map';
+import Sidebar from '../components/Sidebar';
 
 import useInterval from '../hooks/useInterval';
 
@@ -36,7 +37,10 @@ const IndexPage = () => {
         <title>Home Page</title>
       </Helmet>
 
-      <MapIndex bins={bins} />
+      <div className="index">
+        <MapIndex bins={bins} />
+        <Sidebar bins={bins} />
+      </div>
     </Layout>
   );
 };

@@ -34,7 +34,7 @@ function MapIndex({ bins }) {
       className="map"
       center={[13.0372762, 80.2343613]}
       zoom={17}
-      maxZoom={21}
+      maxZoom={19}
       minZoom={16}
     >
       <TileLayer
