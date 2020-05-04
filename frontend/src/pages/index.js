@@ -17,7 +17,10 @@ const IndexPage = () => {
     axios
       .get('http://localhost:5000/bins')
       .then((res) => {
-        setBins(res.data.bins);
+        let bins = res.data.bins.filter(
+          (bin) => !(bin.lat === undefined || bin.lng === undefined)
+        );
+        setBins(bins);
       })
       .catch((err) => setError(true));
   };

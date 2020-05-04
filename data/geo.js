@@ -44,7 +44,7 @@ function generateRandomPoint(center, radius) {
 
 // Usage Example.
 // Generates 100 points that is in a 1km radius from the given lat and lng point.
-var randomGeoPoints = generateRandomPoints({'lat':13.0372762, 'lng':80.2343613}, 1000, 500);
+var randomGeoPoints = generateRandomPoints({'lat':13.0372762, 'lng':80.2343613}, 1000, 1000);
 
 
 const axios = require('axios')
