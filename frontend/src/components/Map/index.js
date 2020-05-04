@@ -42,7 +42,6 @@ function MapIndex({ bins }) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
 
-      {console.log(bins)}
       {bins.map((bin) => (
         <Marker
           key={bin.name}
