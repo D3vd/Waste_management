@@ -7,6 +7,7 @@ import MapIndex from '../components/Map';
 
 const IndexPage = () => {
   const [bins, setBins] = useState([]);
+  const [activeBin, setActiveBin] = useState(0);
   const [error, setError] = useState(false);
 
   useEffect(() => {

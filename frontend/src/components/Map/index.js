@@ -17,7 +17,7 @@ function MapIndex({ bins }) {
       center={[13.0372762, 80.2343613]}
       zoom={17}
       maxZoom={21}
-      minZoom={15}
+      minZoom={16}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
